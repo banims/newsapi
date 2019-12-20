@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import './Home.css'
+import Axios from 'axios';
 
 class Home extends Component {
 
@@ -11,28 +12,26 @@ class Home extends Component {
     }
 
     componentDidMount(){
-        axios.get('https://randomuser.me/api/?results=10')
-        .then((result)=>{
+        Axios.get('https://randomuser.me/api/?results=12')
+        .then(res => {
             this.setState({
-                post: result.data
+                post: res.data.results
             })
         });
     }
     render() {
         return (
-            <div></div>
-                <h2>API newsorg</h2>
-                <hr/>
+            <div>
+                <h2 className="title">API newsorg</h2>
                     {this.state.post.map((data,index) => {
                         return (
                             <div className="newsorg" key={index}>
-                                <p>{data.name.title}&nbsp;{data.name.first}&nbsp;{data.name.last}</p>
+                                <p>{data.name.title}&nbsp;{data.name.last}</p>
 
                                 <img src={data.picture.thumbnail} alt=""/>
                             </div>
                         )
                     })}
-              <hr/>
           </div>
        );
     }

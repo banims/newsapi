@@ -1,0 +1,15 @@
+.title{
+    float: center;
+    color: blue;
+}
+.newsorg{
+    float: left;
+    width: 200px;
+    height: 100px;
+    box-shadow: violet;
+    margin-right: 20px;
+    background-color: turquoise;
+    padding: 15px 50px;
+    color: black;
+    margin-top: 20px;
+}
